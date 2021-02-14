@@ -67,7 +67,7 @@ We don't much difference in number of nodes enqueued
 when start and goal state are reachable with fewer moves
 when comparing heuristic 1  and heuristic 2. But when we 
 increase depth limit(12) and change start/goal with more no. of moves
-we clearly observe clear saving time complexity of heuristic 2 than heuristic 1.
+we clearly observe saving time complexity of heuristic 2 than heuristic 1.
 We see 69% reduction in number of states enqueued(in this case). 
 we also observe heuristic 2 values ranges from(0,11) and heuristic 1
 value ranges from (0,7.)
@@ -78,7 +78,7 @@ value ranges from (0,7.)
 \* 2 5 1 3 4 6 7 8
 
 ### Results of different algorithm runs
-####Depth First search
+#### Depth First search
 
 ``python homework1.py dfs  start_and_goal_state.tx``
 
@@ -87,7 +87,7 @@ Depth First Search
 Unsuccessfull:cutoff reached or Failure
 
 
-####Iterative Deepening Search
+#### Iterative Deepening Search
 
 ``python homework1.py ids  start_and_goal_state.txt``
 
