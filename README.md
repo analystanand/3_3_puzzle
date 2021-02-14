@@ -15,8 +15,8 @@ Algorithms
 
 - dfs
 - ids
-- astar1
-- astar2
+- astar1 (heuristic wrong tile  )
+- astar2 (heuristic manhattan distance of all misplaced tile)
 
 ### How to run the program
 python3 algorithm start_and_goal_state.txt
