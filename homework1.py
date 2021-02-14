@@ -124,11 +124,16 @@ def dfs(node, goal, path, depth, limit, count):
 
 
 def read_state(file):
+    start,goal = [],[]
     with  open(file) as file:
-        data = file.read().split()
-        state = get_state_tuple(data)
-        node = Node(state, depth=0, parent=None, action=None, cost=0)
-        return node
+        for idx,i in enumerate(file.readlines()):
+            if idx==0:
+                start = i.split()
+            else:
+                goal = i.split()
+        start_node = Node(get_state_tuple(start), depth=0, parent=None, action=None, cost=0)
+        goal_node = Node(get_state_tuple(goal), depth=0, parent=None, action=None, cost=0)
+        return start_node,goal_node
 
 
 def heuristic_wrong_tile(start, goal):
@@ -210,22 +215,21 @@ def astar(start_node, goal_node, heuristic, limit):
 
 
 if __name__ == '__main__':
-    if (len(sys.argv) != 4):
-        print(sys.argv[0], "takes 3 arguments. Not ", len(sys.argv) - 1)
+    if (len(sys.argv) != 3):
+        print(sys.argv[0], "takes 2 arguments. Not ", len(sys.argv) - 1)
         sys.exit()
 
     algorithm = sys.argv[1]
-    start_state = sys.argv[2]
-    goal_state = sys.argv[3]
+    input_file = sys.argv[2]
 
     path = []
-    start_node = read_state(start_state)
-    goal_node = read_state(goal_state)
+    start_node,goal_node = read_state(input_file)
 
     print("Input Tile position")
     get_puzzle_print(start_node.get_state())
     print("Goal Position")
     get_puzzle_print(goal_node.get_state())
+
     limit_depth = 10
     if algorithm == "dfs":
         print("Depth First Search")
@@ -235,7 +239,6 @@ if __name__ == '__main__':
         else:
             print("Output (List of states starting from input to goal state, if found):")
             for ix, i in enumerate(path):
-                print(ix + 1)
                 get_puzzle_print(i.get_state())
             print("Number of moves", depth)
             print("Number of states enqueued", count)
@@ -253,7 +256,6 @@ if __name__ == '__main__':
                 print("Output (List of states starting from input to goal state, if found):")
                 result = False
                 for ix, i in enumerate(path):
-                    print(ix + 1)
                     get_puzzle_print(i.get_state())
                 print("Number of moves", depth)
                 print("Number of states enqueued", c)
