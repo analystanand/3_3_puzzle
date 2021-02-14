@@ -141,7 +141,6 @@ def heuristic_wrong_tile(start, goal):
     for i, j in zip(list(start.get_str()), list(goal.get_str())):
         if i != "*" and i != j:
             cost += 1
-    # print('******************',cost)
     return cost
 
 
@@ -217,8 +216,6 @@ def astar(start_node, goal_node, heuristic, limit):
 
 
 if __name__ == '__main__':
-
-
     if (len(sys.argv) != 3):
         print(sys.argv[0], "takes 2 arguments. Not ", len(sys.argv) - 1)
         sys.exit()
@@ -228,17 +225,13 @@ if __name__ == '__main__':
 
     path = []
     start_node,goal_node = read_state(input_file)
-    get_puzzle_print(start_node.get_state())
-    get_puzzle_print(goal_node.get_state())
-    print(heuristic_manhattan(start_node,goal_node))
-    print(heuristic_wrong_tile(start_node,goal_node))
-
     print("Input Tile position")
     get_puzzle_print(start_node.get_state())
     print("Goal Position")
     get_puzzle_print(goal_node.get_state())
 
-    limit_depth = 100
+    limit_depth = 10
+
     if algorithm == "dfs":
         print("Depth First Search")
         node, depth, path, count = dfs(start_node, goal_node, path, depth=0, limit=limit_depth, count=0)
