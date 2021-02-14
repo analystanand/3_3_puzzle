@@ -26,6 +26,9 @@ python3 algorithm start_and_goal_state.txt
 
 5 4 6 1 8 3 7 2 *
 
+5 4 6 1 * 8 7 2 3
+5 4 6 1 8 3 7 2 *
+
 ### structure of input file
 start state
 
