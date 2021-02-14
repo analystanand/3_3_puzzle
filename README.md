@@ -30,3 +30,8 @@ python3 algorithm start_and_goal_state.txt
 start state
 
 goal state
+
+
+References:
+ - Linkedin Learning Data structure and algorithms
+ - Artificial Intelligence - A Modern Approach (3rd Edition)
