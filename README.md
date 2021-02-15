@@ -63,11 +63,11 @@ Number of states enqueued 6
 
 #Analysis of heuristic 1 and heuristic 2
 
-We don't much difference in number of nodes enqueued 
+We don't observe much difference in number of nodes enqueued 
 when start and goal state are reachable with fewer moves
 when comparing heuristic 1  and heuristic 2. But when we 
 increase depth limit(12) and change start/goal with more no. of moves
-we clearly observe saving time complexity of heuristic 2 than heuristic 1.
+,we clearly observe better time complexity of heuristic 2 than heuristic 1.
 We see 69% reduction in number of states enqueued(in this case). 
 we also observe heuristic 2 values ranges from(0,11) and heuristic 1
 value ranges from (0,7). which proves that larger admissible heuristic is better
