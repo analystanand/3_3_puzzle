@@ -70,7 +70,8 @@ increase depth limit(12) and change start/goal with more no. of moves
 we clearly observe saving time complexity of heuristic 2 than heuristic 1.
 We see 69% reduction in number of states enqueued(in this case). 
 we also observe heuristic 2 values ranges from(0,11) and heuristic 1
-value ranges from (0,7.)
+value ranges from (0,7). which proves that larger admissible heuristic is better
+than smaller heuristic.
 
 ### Input File 2 
 \* 2 3 1 7 5 4 6 8
